@@ -84,6 +84,7 @@ type AuthRequest struct {
 // AddOrderRequest -
 type AddOrderRequest struct {
 	AuthRequest
+	ReqID          string `json:"reqid"`
 	Ordertype      string `json:"ordertype"`
 	Pair           string `json:"pair"`
 	Price          string `json:"price"`
