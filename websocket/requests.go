@@ -18,7 +18,7 @@ type Subscription struct {
 
 // SubscriptionRequest - data structure for subscription request
 type SubscriptionRequest struct {
-	ReqID string `json:"reqid,omitempty"`
+	ReqID int64  `json:"reqid,omitempty"`
 	Event string `json:"event"`
 
 	Pairs        []string     `json:"pair"`
@@ -38,7 +38,7 @@ type SubscriptionStatus struct {
 	Event        string       `json:"event"`
 	Status       string       `json:"status"`
 	Pair         string       `json:"pair"`
-	ReqID        string       `json:"reqid,omitempty"`
+	ReqID        int64        `json:"reqid,omitempty"`
 	Error        string       `json:"errorMessage,omitempty"`
 	Subscription Subscription `json:"subscription"`
 }
@@ -46,13 +46,13 @@ type SubscriptionStatus struct {
 // PingRequest - data structure for ping request
 type PingRequest struct {
 	Event string `json:"event"`
-	ReqID int    `json:"reqid,omitempty"`
+	ReqID int64  `json:"reqid,omitempty"`
 }
 
 // PongResponse - data structure for ping response
 type PongResponse struct {
 	Event string `json:"event"`
-	ReqID int    `json:"reqid,omitempty"`
+	ReqID int64  `json:"reqid,omitempty"`
 }
 
 // SystemStatus - data structure for system status event
@@ -84,7 +84,7 @@ type AuthRequest struct {
 // AddOrderRequest -
 type AddOrderRequest struct {
 	AuthRequest
-	ReqID          string `json:"reqid"`
+	ReqID          int64  `json:"reqid,omitempty"`
 	Ordertype      string `json:"ordertype"`
 	Pair           string `json:"pair"`
 	Price          string `json:"price"`
