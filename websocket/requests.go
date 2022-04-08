@@ -105,6 +105,7 @@ type AddOrderRequest struct {
 
 // AddOrderResponse -
 type AddOrderResponse struct {
+	ReqID        int64  `json:"reqid,omitempty"`
 	Description  string `json:"descr"`
 	Event        string `json:"event"`
 	Status       string `json:"status"`
